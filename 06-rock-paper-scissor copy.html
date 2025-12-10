@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Rock paper scissors</p>
+    <button onclick="
+    const ranodomNumber=Math.random();
+    let computerMove;
+
+    if(ranodomNumber<0.34){
+        computerMove='rock';
+        
+
+
+
+       
+    }else if(ranodomNumber<=0.67){
+        computerMove='paper';
+        
+    }else{
+        computerMove='scissors';
+       
+    }
+    let result;
+    const playerMove='rock';
+    
+    if(playerMove===computerMove){
+        result='tie';
+    }else if(playerMove==='rock'){
+        if(computerMove==='paper'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }else if(playerMove==='paper'){
+        if(computerMove==='scissors'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }else if(playerMove==='scissors'){
+        if(computerMove==='rock'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }
+    alert(`your move: ${playerMove}  computer move: ${computerMove}  result: ${result}`);
+   
+    ">rock</button>
+    <button
+
+    onclick="
+    const ranodomNumber=Math.random();
+    let computerMove;
+
+    if(ranodomNumber<0.34){
+        computerMove='rock';
+      
+
+
+
+       
+    }else if(ranodomNumber<=0.67){
+        computerMove='paper';
+      
+    }else{
+        computerMove='scissors';
+       
+    }
+    let result;
+    const playerMove='paper';
+    if(playerMove===computerMove){
+        result='tie';
+    }else if(playerMove==='rock'){
+        if(computerMove==='paper'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }else if(playerMove==='paper'){
+        if(computerMove==='scissors'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }else if(playerMove==='scissors'){
+        if(computerMove==='rock'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }
+    alert(`your move: ${playerMove}  computer move: ${computerMove}  result: ${result}`);
+    "
+    
+    >paper</button>
+    <button
+    
+    onclick="
+    const ranodomNumber=Math.random();
+    let computerMove;
+
+    if(ranodomNumber<0.34){
+        computerMove='rock';
+      
+
+
+
+       
+    }else if(ranodomNumber<=0.67){
+        computerMove='paper';
+       
+    }else{
+        computerMove='scissors';
+      
+    }
+    let result;
+    const playerMove='scissors';
+    if(playerMove===computerMove){
+        result='tie';
+    }else if(playerMove==='rock'){
+        if(computerMove==='paper'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }else if(playerMove==='paper'){
+        if(computerMove==='scissors'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }else if(playerMove==='scissors'){
+        if(computerMove==='rock'){
+            result='you lose';
+        }else{
+            result='you win';
+        }
+    }
+    alert(`your move: ${playerMove}  computer move: ${computerMove}  result: ${result}`);
+    "
+    >scissors</button>
+   
+    
+</body>
+</html>
+
+<!-- 
+git remote add origin https://github.com/KalSol12/Keeper-App.git
+git branch -M main
+git push -u origin main -->
