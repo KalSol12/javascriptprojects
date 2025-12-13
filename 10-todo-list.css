@@ -1,0 +1,116 @@
+ body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-color: rgb(240, 240, 240);
+
+        
+    }
+    .show-the-result{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 10px;
+       
+    }
+    .input-div{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 10px;
+        align-items: stretch;
+        margin-bottom: 30px;
+        margin-top: 20px;
+       
+
+    }
+    
+    .input-div label{
+        font-weight: bold;
+        font-size: 18px;
+
+    }
+    .input-div input, .input-div select{
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid gray;
+
+    }
+    .input-div button{
+        padding: 10px 15px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold; 
+        
+
+    }
+    .input-div button:hover{
+        background-color: darkgreen;
+    }
+    .show-the-result div{
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        text-align: center;
+        font-weight: bold;
+
+    }
+    .show-the-result button{
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;}
+    .show-the-result button:hover{
+        background-color: darkred;
+    }
+
+    .show-the-result div:nth-child(4n){
+        background-color: #ffdddd;
+
+    }
+    .show-the-result div:nth-child(4n-1){
+        background-color: #ddffdd;
+
+    }
+    .show-the-result div:nth-child(4n-2){
+        background-color: #ddddff;}
+        .show-the-result div:nth-child(4n-3){
+            background-color: #ffffdd;
+        }
+        .show-the-result div:hover{
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .input-div div{
+            display: flex;
+            flex-direction: column;
+        }
+        .input-div div:nth-child(1){
+            grid-column: span 1;
+        }
+        .input-div div:nth-child(5){
+        flex: 1;
+        }
+        .input-div div:nth-child(3){
+            column-span: 1;
+
+           
+
+         
+        }
+        .input-div div:nth-child(4){
+            flex: 1;
+
+          }
+        .input-div div:nth-child(2){
+           /* smaller */
+              flex: 1;
+
+          }
