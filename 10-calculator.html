@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* display: grid; */
+            text-align: center;
+            color: white;
+            background-color: rgb(20, 20, 20);
+           
+        }
+
+        button
+        {
+            
+         width: 70px;
+         height: 70px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: rgb(77, 77, 77);
+            border: none;
+            margin: 3px;
+            border-radius: 100px;
+            text-align: center;
+
+        }
+        div :nth-child(4){
+            background-color: orange;
+        }
+        .show-the-number{
+            font-size: 20px;font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button
+        onclick="
+        calculatorOutput+='1';
+        console.log(calculatorOutput);
+        document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+        "
+           
+           
+        >1</button>
+        <button
+            onclick="
+            calculatorOutput+='2';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);        
+            "   
+        >2</button>
+
+         <button
+            onclick="
+            calculatorOutput+='3';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >3</button>
+         <button
+            onclick="
+            calculatorOutput+='-';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >-</button>
+    </div>
+    <div>
+        <button
+            onclick="
+            calculatorOutput+='4';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+              console.log(calculatorOutput);
+
+          
+            "
+        >4</button>
+         <button
+            onclick="
+            calculatorOutput+='5';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >5</button>
+        <button
+            onclick="
+            calculatorOutput+='6';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+          
+            "
+        >6</button>
+         <button
+            onclick="
+            calculatorOutput+='+';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >+</button>
+    </div>
+     <div>
+        <button
+        onclick="
+        calculatorOutput+='7';
+        console.log(calculatorOutput);
+        document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+        "
+           
+           
+        >7</button>
+        <button
+            onclick="
+            calculatorOutput+='8';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);        
+            "   
+        >8</button>
+
+         <button
+            onclick="
+            calculatorOutput+='9';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >9</button>
+         <button
+            onclick="
+            calculatorOutput+='*';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >*</button>
+         <div>
+        <button
+        onclick="
+        calculatorOutput+='0';
+        console.log(calculatorOutput);
+        document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+        "
+           
+           
+        >0</button>
+        <button
+            onclick="
+            calculatorOutput+='.';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);        
+            "   
+        >.</button>
+        <button
+    onclick="
+    updateCalculator();
+    "
+    >=</button>
+
+         <button
+            onclick="
+            calculatorOutput+='/';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+            "   
+        >/</button>
+    </div>
+    </div>
+    
+    <button
+    class=""
+    onclick="
+    calculatorOutput='';
+    localStorage.removeItem('calculatorOutput2');
+    document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+    alert('Calculator has been reset');
+    "  
+    >clear</button>
+    <p class="show-the-number">0</p>
+    <script>
+        
+        let calculatorOutput= localStorage.getItem('calculatorOutput2')||'';
+        console.log(calculatorOutput);
+
+        document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+
+        function updateCalculator(){
+                      
+                 calculatorOutput=eval(calculatorOutput);// to remove the '=' at the end
+                localStorage.setItem('calculatorOutput2',calculatorOutput);
+                console.log(calculatorOutput);
+
+                document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

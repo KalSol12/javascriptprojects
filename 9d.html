@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"
+    placeholder="type your name"
+    class="name-input"
+    onkeydown="
+    updateScoreElement();
+ 
+  
+    "
+    >
+    <button
+    onclick="
+    greetUser();
+    "
+    >greet me</button>
+    <p class="greeting-message"></p>
+    <script>
+             function updateScoreElement(){
+                   if(event.key=='Enter'){
+                greetUser()
+
+            }
+
+
+
+             }
+
+        function greetUser(){   
+            let inputElement=document.querySelector('input');
+            let name=inputElement.value;
+            let greetingMessage=`hello, ${name}! welcome back.`;
+            document.querySelector('.greeting-message').innerHTML=greetingMessage;
+        }
+    </script>
+
+    
+</body>
+</html>

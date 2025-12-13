@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <button
+            onclick="
+            calculatorOutput+='1';
+            console.log(calculatorOutput);
+          
+            "
+        >1</button>
+        <button
+            onclick="
+            calculatorOutput+='2';
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >2</button>
+    </p>
+    <p>
+        <button
+            onclick="
+            calculatorOutput+='3';
+              console.log(calculatorOutput);
+
+          
+            "
+        >3</button>
+        <button
+            onclick="
+            calculatorOutput+='+';
+            console.log(calculatorOutput);
+          
+            "
+        >+</button>
+    </p>
+    <button
+    onclick="
+    updateCalculator();
+    "
+    >=</button>
+    <script>
+        let calculatorOutput= localStorage.getItem('calculatorOutput')||'';
+        console.log(calculatorOutput);
+
+        function updateCalculator(){
+                      
+                 calculatorOutput=eval(calculatorOutput);// to remove the '=' at the end
+                localStorage.setItem('calculatorOutput',calculatorOutput);
+                console.log(calculatorOutput);
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

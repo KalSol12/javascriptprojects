@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button
+    onclick="
+    updateQuantity(1);
+
+    "
+    >add to Cart</button>
+    <button
+     onclick="
+
+updateQuantity(2);
+    
+    "
+    
+    >+2</button>
+    <button
+     onclick="
+     updateQuantity(3);
+     
+    "
+    >+3</button>
+    <button
+        onclick="
+        updateQuantity(-2);"
+    >-2</button>
+    <button
+        onclick="
+        updateQuantity(-3);
+    
+        "
+    >-3</button>
+    <button>+6</button>
+
+    
+    <script>
+
+ 
+
+        let cartQuantity=0;
+
+        function updateQuantity(change){
+            if(change>0){
+                if(cartQuantity>=10){
+                    alert('You have reached the maximum quantity');
+                } else {
+                    cartQuantity+=change;
+                    console.log(cartQuantity);
+                }
+            } else {
+                if(cartQuantity<=0){
+                    alert('You have reached the minimum quantity');
+                } else {
+                    cartQuantity+=change;
+                    console.log(cartQuantity);
+                }
+            }
+          
+          
+        }
+
+
+    </script>
+</body>
+
+</html>

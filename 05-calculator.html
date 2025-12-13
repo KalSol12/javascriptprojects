@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <button
+            onclick="
+            calculatorOutput+='1';
+            console.log(calculatorOutput);
+          
+            "
+        >1</button>
+        <button
+            onclick="
+            calculatorOutput+='2';
+            console.log(calculatorOutput);
+
+          
+            "   
+ 
+
+        >2</button>
+    </p>
+    <p>
+        <button
+            onclick="
+           updateCalculator('3');
+          
+            "
+        >3</button>
+        <button
+            onclick="
+              updateCalculator('+');
+          
+            "
+        >+</button>
+    </p>
+    <button
+    onclick="
+    updateCalculator('=');
+
+  
+  
+    "
+    >=</button>
+    <script>
+        let calculatorOutput="";
+        // function calculate(){
+        //     let result=eval(calculatorOutput);
+        //     console.log(result);
+            
+        // }
+        function updateCalculator(value){
+            calculatorOutput+=value;
+            console.log(calculatorOutput);
+            if(value==='='){
+                let result=eval(calculatorOutput.slice(0,-1));// to remove the '=' at the end
+                console.log(result);}
+        }
+
+
+    </script>
+    
+</body>
+</html>

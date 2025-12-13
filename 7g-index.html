@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function convertLength(length, from, to) {
+        if(from==="km" && to=="mile"){
+            return length/1.6;
+        } else if(from==="mile" && to==="km"){
+            return length* 1.6;
+        } else if(from===to){
+            return length;}
+           else if(from=='feet'&&to=='km'){
+            return length/3280.84;
+           } else if(from=='km'&&to=='feet'){
+            return length*3280.84;
+            
+        }
+        else if(from=='feet'&&to=='mile'){
+            return length/5280;
+        }
+        else if(from=='mile'&&to=='feet'){
+            return length*5280;
+        }
+        else{
+            return "conversion not supported";
+        }
+
+       
+    }
+    console.log(convertLength(32, "km", "mile")); // outputs: 19.2
+    console.log(convertLength(5, "mile", "km")); // outputs: 83.33333
+    console.log(convertLength(100, "feet", "km")); // outputs: 0.03048
+    console.log(convertLength(5, "km", "feet")); // outputs: 3280.839895013123
+    console.log(convertLength(5280, "feet", "mile")); // outputs: 1
+    console.log(convertLength(5, "mile", "feet")); // outputs: 10560
+    console.log(convertLength(10, "km", "km")); // outputs: 10
+    console.log(convertLength(5, "meter", "mile")); // outputs: conversion not supported
+
+    </script>
+    
+</body>
+</html>

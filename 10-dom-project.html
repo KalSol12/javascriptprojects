@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subscribe-btn{
+            background-color: black;
+            padding: 10px 15px;
+            color: aliceblue;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 50px;
+
+        }
+        .is-subcribed{
+            background-color: rgb(241, 241, 241);
+            color: black;
+
+
+        }
+        .input-cost{
+            font-size: 25px;
+            padding: 10px;
+
+        }
+        .calculator-button{
+            cursor: pointer;
+            font-size: 25px;
+            border:none;
+            padding: 12px;
+            background-color: greenyellow;
+
+        }
+        .error-show{
+            color: red;
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+    <button
+    id="subscribe-button" class="subscribe-btn"
+    onclick="subscribe()"
+    >subscribe</button>
+
+<p>Amazon Shiping Cart</p>
+    <input type="text" class="input-cost"
+    placeholder="enter cost"
+    onkeydown="
+    if (event.key=='Enter') {
+        calculateTotal();
+        
+    }
+    "
+    >
+    <button 
+    class="calculator-button"
+    onclick="calculateTotal()"
+
+    >calculator</button>
+    <p class="show-the-cart-quantity"></p>
+    <br><br><br>
+
+    <input type="text" placeholder="type something"
+    class="input"
+    onkeydown="
+   
+           updateSomething();
+        
+    
+ 
+    "
+    >
+    
+    <p class="js-show-something"></p>
+
+    
+
+    <script>
+        function updateSomething(event){
+                   
+                let inputElement=document.querySelector('.input');
+                let something=inputElement.value;
+
+                document.querySelector('.js-show-something').innerHTML=something;
+            
+        }
+       
+
+        
+       
+
+
+        function calculateTotal(){
+            let inputElement=document.querySelector('input');
+            let cost=inputElement.value;
+          
+            if (cost<40) {
+                if(cost<0){
+                    document.querySelector('.show-the-cart-quantity').classList.add('error-show');
+                  document.querySelector('.show-the-cart-quantity').innerHTML='Error the cost canot be less than $0';
+
+            }else{
+                 document.querySelector('.show-the-cart-quantity').classList.remove('error-show');
+                  cost=Number(cost)+10;
+                  document.querySelector('.show-the-cart-quantity').innerHTML=Math.round(cost);}
+                
+            }
+             
+            else{
+                  document.querySelector('.show-the-cart-quantity').classList.remove('error-show');
+                 document.querySelector('.show-the-cart-quantity').innerHTML=Math.round(cost);
+            }
+            
+            
+          
+              let totalCost=cost;
+            
+           
+          
+        }
+
+
+
+
+        function subscribe(){
+            let button=document.getElementById("subscribe-button");
+            if(button.innerText==="subscribe"){
+                button.innerText="subscribed";
+                button.classList.add('is-subcribed');
+             
+              
+            }else{
+                button.innerText="subscribe";
+                button.classList.remove('is-subcribed');
+             
+            }
+        }
+
+
+    </script>
+
+
+    
+</body>
+</html>

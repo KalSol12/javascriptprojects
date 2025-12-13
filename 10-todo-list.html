@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo-List</h1>
+    <input type="text" class="js-input-text">
+    <label for="start"> start date</label>
+    <input type="date" 
+    class="js-input-date"
+    >
+
+     <label for="priority">priority</label>
+    <select name="priority" id="priority" class="js-input-priority">
+        <option value="high">high</option>
+        <option value="medium">medium</option>
+        <option value="low">low</option>
+    </select>
+    <!-- after priority i will add  -->
+     <!-- // what is the deadline for the task -->
+     <label for="">dead line</label>
+     <input type="date"
+        class="js-input-deadline"   
+     >
+    <br>
+
+    <button
+    onclick="
+    showTheResult()"
+    >add</button>
+    <div class="show-the-result">
+
+    </div>
+    
+</body>
+<script>
+// initial todo list array
+
+//   const todolistArray= [{
+//         name:'make dinner',
+//         date:'2024-06-20',
+//         priority:'high',
+//         deadline:'2024-06-25'
+//      },
+//         {
+//             name:'wash clothes',
+//             date:'2024-06-21',
+//             priority:'high',
+//             deadline:'2024-06-30'   
+//         },
+//         {
+//             name:'do homework',
+//             date:'2024-06-22',
+//             priority:'low',
+//             deadline:'2024-07-05'
+//         }
+//     ];
+    const todolistArray= JSON.parse(localStorage.getItem('todoList'))||[
+        {
+            name:'pray in the morning',
+            date:'always',
+            priority:'high',
+            deadline:'never'
+         },
+            {
+                name:'pray in the evening',
+                date:'always',
+                priority:'high',
+                deadline:'never'   
+            },
+            {
+                name:'practice coding',
+                date:'sometimes',
+                priority:'medium',
+                deadline:'never'
+            }
+        ];
+    console.log(todolistArray);
+
+ 
+     
+    updateTheList();
+    
+    function updateTheList() {  
+         let html='';
+    //    const HtmlList=0;
+       for (let i = 0; i < todolistArray.length; i++) {
+        const todoItem=todolistArray[i];
+
+
+        const {name,date,priority,deadline}= todoItem;
+        const todo=`${name} -start- ${date} - end - ${deadline}- priority- ${priority}`;
+        //want to store in the local storage
+        localStorage.setItem('todoList',JSON.stringify(todolistArray));
+ 
+
+        // console.log(store);
+
+       
+  let  todoHtml =`
+         <p>
+            ${todo}   
+            <button
+            onclick="
+            todolistArray.splice(${i},1);
+             localStorage.removeItem('todoList');
+              
+          
+             updateTheList();
+
+            "
+            >Delete</button>
+            </p>`;
+
+        html+=todoHtml;
+           
+
+       }
+         
+       document.querySelector('.show-the-result').innerHTML=html;
+     
+   
+    }
+        
+   
+
+
+ 
+function showTheResult() {
+
+let name= document.querySelector('.js-input-text').value;
+let date= document.querySelector('.js-input-date').value;
+let priority= document.querySelector('.js-input-priority').value;
+let deadline= document.querySelector('.js-input-deadline').value;
+todolistArray.push({
+   //shorthand property names
+   name,
+   date,
+    priority,
+    deadline
+});
+console.log(todolistArray.length);// to make sure that the new item is added to the array
+ document.querySelector('.show-the-result').innerHTML=''
+     updateTheList();
+
+
+}
+
+</script>
+</html>

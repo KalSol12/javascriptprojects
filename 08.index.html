@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function issameProduct(name1,name2){
+            return name1.name.toLowerCase()===name2.name.toLowerCase() && name1.price===name2.price;
+        }
+        name1={
+            name:'apple',
+            price:200
+
+        }
+        name2={
+            name:'Apple',
+            price:200
+
+        }
+        console.log(issameProduct(name1,name2));
+
+
+
+//search to repeate the string many times
+function repeatString(str,num){
+    let result="";
+    for(let i=0;i<num;i++){
+        result+=str;
+    }
+    return result;
+}
+console.log(repeatString("kal",3));
+    </script>
+    
+</body>
+</html>

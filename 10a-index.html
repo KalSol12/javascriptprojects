@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .js-button{
+        padding: 10px;
+        border: none;
+        width: 70px;
+        cursor: pointer;
+
+
+    }
+    .is-toggle{
+        background-color: black;
+        color: white;
+
+    }
+</style>
+<body>
+
+    <button class="js-button Gaming"
+    onclick="
+    updatestatus1()
+    "
+   
+    
+    >Gaming</button>
+     <button class="js-button Music"
+    onclick="
+    updatestatus2()
+    "
+   
+    
+    >Music</button>
+     <button class="js-button Tech"
+    onclick="
+    updatestatus3()
+    "
+   
+    
+    >Tech</button>
+    
+</body>
+<script>
+  
+  let test1=  document.querySelector('.Gaming');
+  let test2=  document.querySelector('.Music');
+ let test3=document.querySelector('.Tech');
+
+
+
+ function updatestatus1(){
+    if(test1.classList.contains('is-toggle')){
+        test1.classList.remove('is-toggle')
+
+
+    }
+    else
+       { test1.classList.add('is-toggle');
+        test2.classList.remove('is-toggle');
+        test3.classList.remove('is-toggle');
+        
+
+       }
+
+         console.log(test);
+ }
+ 
+ 
+ function updatestatus2(){
+    if(test2.classList.contains('is-toggle')){
+        test2.classList.remove('is-toggle')
+    }
+    else
+       { test2.classList.add('is-toggle');
+           test1.classList.remove('is-toggle');
+        test3.classList.remove('is-toggle');
+       }
+
+         console.log(test2);
+ }
+ 
+ function updatestatus3(){
+    if(test3.classList.contains('is-toggle')){
+        test3.classList.remove('is-toggle')
+    }
+    else
+       { test3.classList.add('is-toggle');
+           test2.classList.remove('is-toggle');
+        test1.classList.remove('is-toggle');
+       }
+
+         console.log(test3);
+ }
+ 
+
+ 
+        
+    
+
+</script>
+</html>

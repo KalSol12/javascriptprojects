@@ -4,40 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(20, 20, 20);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header{
+            font-size: 30px;
+
+        }
+        .move-button{
+            cursor: pointer;
+        
+            width: 120px;
+            height: 120px;
+            margin-left: 10px;
+            border-radius: 60px;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        .reset-button{
+            background-color: red;
+            color: aliceblue;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+
+
+        }
+        .result{
+            font-size: 25px;
+
+        }
+        .js-score{
+            font-size: 25px;
+        }
+        .move-result{
+            font-size: 25px;
+        }
+
+    </style>
 </head>
 <body>
-    <p> Rock paper scissors</p>
-    <button onclick="
+
+
+    <p class="header"> Rock paper scissors</p>
+    <button class="move-button" onclick="
     playGame('rock');
+    
 
     
     
    
-    ">rock</button>
+    ">rock
+    <img src="" alt="">
+    
+</button>
     <button
+    class="move-button"
 
     onclick="
     playGame('paper');
+
     "
     
-    >paper</button>
+    >paper
+    <img src="" alt="">
+</button>
     <button
-    
+    class="move-button"
     onclick="
     playGame('scissors');
 
     "
-    >scissors</button>
+    >
+    <img src="" alt="">
+    scissors</button>
+    <p class="move-result"></p>
+    <p class="result"></p>
+    <p class="js-score"></p>
     <button
+    class="reset-button"
     onclick="
     score.wins=0;
     score.losses=0;
     score.ties=0;
     localStorage.removeItem('scores');
+    updateScoreElement();
+    document.querySelector('.result').innerHTML='';
+    document.querySelector('.move-result').innerHTML='';
+  
 
 
       
-    alert('Score has been reset');
+   
+    
 
 
     "
@@ -52,6 +115,8 @@
     losses:0,
     ties:0
   };
+
+updateScoreElement();
   console.log(score);
   function playGame(playerMove){
 
@@ -144,14 +209,28 @@
     } else if(result==='tie'){
         score.ties+=1;
     }
+    //localStorage  
  localStorage.setItem('scores',JSON.stringify(score));
+ //
+ 
+updateScoreElement();
 
-     alert(`your move: ${playerMove}  computer move: ${computerMove}  result: ${result}
-Wins: ${score.wins}  Losses: ${score.losses}  Ties: ${score.ties}`);
+//       alert(`your move: ${playerMove}  computer move: ${computerMove}  result: ${result}
+//  Wins: ${score.wins}  Losses: ${score.losses}  Ties: ${score.ties}`);
+document.querySelector('.move-result').innerHTML=`
+${result} `;
+document.querySelector('.result').innerHTML=`your move: 
+<button class="move-button">${playerMove}</button>  
+    computer move: 
+<button class="move-button">${computerMove}</button>`;
+
     
 }
 
 
+function updateScoreElement(){
+    document.querySelector('.js-score').innerHTML=`Wins: ${score.wins}  Losses: ${score.losses}  Ties: ${score.ties}`;
+}
 
         function computeMove(){
             const ranodomNumber=Math.random();

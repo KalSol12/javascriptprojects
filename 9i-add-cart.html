@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button
+    onclick="
+    updateQuantity(1);
+
+    "
+    >add to Cart</button>
+    <button
+     onclick="
+
+updateQuantity(2);
+    
+    "
+    
+    >+2</button>
+    <button
+     onclick="
+     updateQuantity(3);
+     
+    "
+    >+3</button>
+    <button
+        onclick="
+        updateQuantity(-2);"
+    >-2</button>
+    <button
+        onclick="
+        updateQuantity(-3);
+    
+        "
+    >-3</button>
+    <button
+        onclick="
+        updateQuantity(-1);
+    
+        "
+    >removeItem from cart</button>
+
+    <p class="show-the-quantity"></p>
+
+
+    
+    <script>
+
+ 
+
+        let cartQuantity=0;
+        document.querySelector('.show-the-quantity').innerHTML=`Cart Quantity: ${cartQuantity}`;
+
+        function updateQuantity(change){
+
+            if(change>0){
+                if(cartQuantity>8){
+                    alert('You have reached the maximum quantity');
+                   
+                } else {
+                    cartQuantity+=change;
+                     document.querySelector('.show-the-quantity').innerHTML=`Cart Quantity: ${cartQuantity}`;
+                    
+                }
+            } else {
+                if(cartQuantity<=0){
+                    alert('You have reached the minimum quantity');
+                } else {
+                    cartQuantity+=change;
+                     document.querySelector('.show-the-quantity').innerHTML=`Cart Quantity: ${cartQuantity}`;
+                   
+                }
+            }
+           
+          
+          
+        }
+
+
+    </script>
+</body>
+
+</html>

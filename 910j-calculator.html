@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <button
+        onclick="
+        calculatorOutput+='1';
+        console.log(calculatorOutput);
+        document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+        "
+           
+           
+        >1</button>
+        <button
+            onclick="
+            calculatorOutput+='2';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+
+
+          
+            "   
+ 
+
+        >2</button>
+    </p>
+    <p>
+        <button
+            onclick="
+            calculatorOutput+='3';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+              console.log(calculatorOutput);
+
+          
+            "
+        >3</button>
+        <button
+            onclick="
+            calculatorOutput+='+';
+            document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+            console.log(calculatorOutput);
+          
+            "
+        >+</button>
+    </p>
+    <button
+    onclick="
+    updateCalculator();
+    "
+    >=</button>
+    <button
+    onclick="
+    calculatorOutput='';
+    localStorage.removeItem('calculatorOutput2');
+    document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+    alert('Calculator has been reset');
+    "  
+    >resete </button>
+    <p class="show-the-number"></p>
+    <script>
+        
+        let calculatorOutput= localStorage.getItem('calculatorOutput2')||'';
+        console.log(calculatorOutput);
+
+        document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+
+        function updateCalculator(){
+                      
+                 calculatorOutput=eval(calculatorOutput);// to remove the '=' at the end
+                localStorage.setItem('calculatorOutput2',calculatorOutput);
+                console.log(calculatorOutput);
+
+                document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
