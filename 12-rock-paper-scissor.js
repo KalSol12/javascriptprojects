@@ -1,129 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            background-color: rgb(20, 20, 20);
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .header{
-            font-size: 30px;
-
-        }
-        .move-button{
-            cursor: pointer;
-        
-            width: 120px;
-            height: 120px;
-            margin-left: 10px;
-            border-radius: 60px;
-            margin-bottom: 50px;
-            margin-top: 50px;
-        }
-        .reset-button{
-            background-color: red;
-            color: aliceblue;
-            border: none;
-            padding: 12px 15px;
-            border-radius: 15px;
-            cursor: pointer;
-
-
-        }
-        .result{
-            font-size: 25px;
-
-        }
-        .js-score{
-            font-size: 25px;
-        }
-        .move-result{
-            font-size: 25px;
-        }
-
-    </style>
-</head>
-<body>
-
-
-    <p class="header"> Rock paper scissors</p>
-    <button class="move-button" onclick="
-    playGame('rock');
-    
-
-    
-    
-   
-    ">rock
-    <img src="" alt="">
-    
-</button>
-    <button
-    class="move-button"
-
-    onclick="
-    playGame('paper');
-
-    "
-    
-    >paper
-    <img src="" alt="">
-</button>
-    <button
-    class="move-button"
-    onclick="
-    playGame('scissors');
-
-    "
-    >
-    <img src="" alt="">
-    scissors</button>
-    <p class="move-result"></p>
-    <p class="result"></p>
-    <p class="js-score"></p>
-    <button
-    class="reset-button"
-    onclick="
-    score.wins=0;
-    score.losses=0;
-    score.ties=0;
-    localStorage.removeItem('scores');
-    updateScoreElement();
-    document.querySelector('.result').innerHTML='';
-    document.querySelector('.move-result').innerHTML='';
-  
-
-
-      
-   
-    
-
-
-    "
-    >resete</button>
-   
-    
-    <script>
-
-
-  let score=JSON.parse(localStorage.getItem('scores'))||{
+let score=JSON.parse(localStorage.getItem('scores'))||{
     wins:0,
     losses:0,
     ties:0
   };
 
 updateScoreElement();
-  console.log(score);
+let isAutoplay=false;
+let intervalId;
+function Autoplay() {
+    let playerMove;
+    if (isAutoplay===false) {
+  intervalId= setInterval(function(){
+         playerMove=computeMove();
+        playGame(playerMove);
+    },2000)
+     isAutoplay=true;
+  
+
+}else{
+    isAutoplay=false;
+
+   clearInterval(intervalId);
+}
+   
+
+    
+};
   function playGame(playerMove){
 
     let computerMove= computeMove();
     let result='';
     
-//the rock logic miss some things bro
+
     if(playerMove=="rock"){
     if(playerMove===computeMove){
         result='tie';
@@ -220,9 +128,19 @@ updateScoreElement();
 document.querySelector('.move-result').innerHTML=`
 ${result} `;
 document.querySelector('.result').innerHTML=`your move: 
-<button class="move-button">${playerMove}</button>  
+<button class="move-button-player">
+<img src="
+images/${playerMove}-emoji.png
+" alt="${playerMove}" class="move-emoji">
+
+</button>  
     computer move: 
-<button class="move-button">${computerMove}</button>`;
+<button class="move-button-computer">
+<img src="images/${computerMove}-emoji.png
+" alt="${computerMove}" class="move-emoji">
+
+</button>`;
+
 
     
 }
@@ -247,7 +165,3 @@ function updateScoreElement(){
     }
     return computerMove;
         }
-           
-    </script>
-</body>
-</html>
