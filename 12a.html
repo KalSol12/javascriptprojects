@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn" onclick="
+    
+        ">add to cart</button>
+        <p class="js-text"></p>
+
+    <script>
+    const btn = document.querySelector('.btn');
+    const text = document.querySelector('.js-text');
+    btn.addEventListener('click', () => {
+       //refresh button text
+
+       btn.innerText = 'Adding...';
+        text.innerText = '';
+      setTimeout(() => {
+        btn.innerText = 'Add to Cart';
+
+        text.innerText = 'Item added to cart!';
+      }, 2000);
+    });
+
+
+    </script>
+    
+</body>
+</html>

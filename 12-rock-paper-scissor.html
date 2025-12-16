@@ -13,34 +13,27 @@
 
 
     <p class="header"> Rock paper scissors</p>
-    <button class="move-button" onclick="
-    playGame('rock');
+    <button class="move-button js-rock-btn" 
     
 
     
     
-   
-    ">
+   >
     <img src="images/rock-emoji.png" alt="" class="move-image">
     
 </button>
     <button
-    class="move-button"
+    class="move-button js-paper-btn"
 
-    onclick="
-    playGame('paper');
+   
 
-    "
+    
     
     >
     <img src="images/paper-emoji.png" alt="" class="move-image">
 </button>
     <button
-    class="move-button"
-    onclick="
-    playGame('scissors');
-
-    "
+    class="move-button js-scissor-btn"
     >
     <img src="images/scissors-emoji.png" alt="scissors" class="move-image">
     </button>
@@ -60,10 +53,7 @@
     document.querySelector('.move-result').innerHTML='';
     "
     >resete</button>
-    <button class="auto-play-button"
-    onclick="
-    Autoplay();"
-    
+    <button class="auto-play-button js-auto-btn"
     >Auto play</button>
    
     

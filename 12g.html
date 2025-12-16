@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>app</title>
+</head>
+<body>
+
+<button class="add-btn">add</button>
+<button class="remove-btn">remove</button>
+
+<script>
+  const addBtn = document.querySelector('.add-btn');
+  const removeBtn = document.querySelector('.remove-btn');
+
+  let message = 0;
+
+
+let intervalId = null;
+
+function startBlinking() {
+//   if (intervalId) return; // already blinking
+
+  intervalId = setInterval(() => {
+    document.title =
+      document.title === 'app'
+        ? `(${message}) New Messages`
+        : 'app';
+  }, 1000);
+}
+
+function stopBlinking() {
+  clearInterval(intervalId);
+  intervalId = null;
+  document.title = 'app';
+}
+
+function updateBlinking() {
+  if (message !== 0) {
+    startBlinking();
+  } else {
+    stopBlinking();
+  }
+}
+addBtn.addEventListener('click', () => {
+  message++;
+  updateBlinking();
+});
+
+removeBtn.addEventListener('click', () => {
+  if (message > 0) {
+    message--;
+    updateBlinking();
+  }
+});
+
+
+</script>
+
+</body>
+</html>

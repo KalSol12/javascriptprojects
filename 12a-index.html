@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn" onclick="
+    loading();
+
+
+
+        ">start</button>
+    
+</body>
+<script>
+   const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', () => {
+  btn.innerText = 'Loading...';
+
+  setTimeout(() => {
+    btn.innerText = 'Finish';
+  }, 2000);
+});
+
+  
+
+
+
+</script>
+</html>

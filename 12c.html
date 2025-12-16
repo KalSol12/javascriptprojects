@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="js-button" onclick="loading()">
+        start
+    </button>
+    <br>
+    <br>
+    <button onclick="change()">add to Cart</button>
+    <p class="js-text"> </p>
+
+    <script>
+
+        let textHtml=document.querySelector('.js-text');
+
+     function change(params) {
+        
+             textHtml.innerHTML="added";
+             let id;
+            
+            if (textHtml.innerHTML=="added") {
+           id= setTimeout(() => {
+                   textHtml.innerHTML="";
+            clearTimeout(id);
+            }, 3000);
+
+        }
+       
+    }
+            
+      
+           
+
+        
+        
+
+
+
+
+         let bthHtml=document.querySelector('.js-button');
+          let isloading=false;
+        function loading(params) {
+
+            setTimeout(() => {
+                 bthHtml.innerHTML="loading";
+                
+            },0);
+                setTimeout(() => {
+                 bthHtml.innerHTML="finished";
+                
+            }, 3000);
+             setTimeout(() => {
+                 bthHtml.innerHTML="start";
+                
+            }, 4000);
+            
+        }
+
+
+    </script>
+    
+</body>
+</html>
