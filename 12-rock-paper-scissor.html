@@ -43,16 +43,20 @@
 
     <button
     class="reset-button"
-    onclick="
-    score.wins=0;
-    score.losses=0;
-    score.ties=0;
-    localStorage.removeItem('scores');
-    updateScoreElement();
-    document.querySelector('.result').innerHTML='';
-    document.querySelector('.move-result').innerHTML='';
-    "
+   
     >resete</button>
+   
+    <br>
+    <br>
+    <br>
+
+<div class="confirm-box" style='display: none;'>
+  <p>Are you sure you want to reset the score?</p>
+  <button class="yes-btn">Yes</button>
+  <button class="no-btn">No</button>
+</div>
+
+
     <button class="auto-play-button js-auto-btn"
     >Auto play</button>
    

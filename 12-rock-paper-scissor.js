@@ -10,18 +10,28 @@ let intervalId;
 document.querySelector('.js-auto-btn').addEventListener('click',()=>{
     Autoplay();
 });
+document.body.addEventListener('keydown',(event)=>{
+  if (event.key==='a') {
+    
+    Autoplay();
+  }
+
+})
 function Autoplay() {
+  
     let playerMove;
     if (isAutoplay===false) {
   intervalId= setInterval(()=>{
          playerMove=computeMove();
         playGame(playerMove);
+          document.querySelector('.js-auto-btn').innerHTML='stop palying';
     },2000)
      isAutoplay=true;
   
 
 }else{
     isAutoplay=false;
+     document.querySelector('.js-auto-btn').innerHTML='Auto play';
 
    clearInterval(intervalId);
 }
@@ -41,6 +51,49 @@ document.querySelector('.js-paper-btn').addEventListener('click',()=>{
 document.querySelector('.js-scissor-btn').addEventListener('click',()=>{
     playGame('scissors');
 });
+
+
+const confirmBox = document.querySelector('.confirm-box');
+const yesBtn = document.querySelector('.yes-btn');
+const noBtn = document.querySelector('.no-btn');
+
+function showConfirm() {
+  confirmBox.style.display = 'block';
+}
+// hide confirmation
+function hideConfirm() {
+  confirmBox.style.display = 'none';
+}
+function resetScore() {
+      score.wins=0;
+    score.losses=0;
+    score.ties=0;
+    localStorage.removeItem('scores');
+    updateScoreElement();
+    document.querySelector('.result').innerHTML='';
+    document.querySelector('.move-result').innerHTML='';
+    hideConfirm();
+}
+
+document.querySelector('.reset-button').addEventListener('click',()=>{
+    showConfirm();
+
+})
+// YES
+yesBtn.addEventListener('click', resetScore);
+
+// NO
+noBtn.addEventListener('click', hideConfirm);
+
+document.body.addEventListener('keydown',(event)=>{
+    console.log(event.key);
+    if(event.key=='Backspace') {
+        showConfirm();
+
+        
+    }
+
+})
 
 document.body.addEventListener('keydown',(event)=>{
     event.key.toLocaleLowerCase

@@ -53,6 +53,7 @@
     updateCalculator();
     "
     >=</button>
+    
     <button
     onclick="
     calculatorOutput='';
@@ -61,25 +62,13 @@
     alert('Calculator has been reset');
     "  
     >resete </button>
-    <p class="show-the-number"></p>
-    <script>
-        
-        let calculatorOutput= localStorage.getItem('calculatorOutput2')||'';
-        console.log(calculatorOutput);
+    <p class="show-the-number">
 
-        document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
+    </p>
 
-        function updateCalculator(){
-                      
-                 calculatorOutput=eval(calculatorOutput);// to remove the '=' at the end
-                localStorage.setItem('calculatorOutput2',calculatorOutput);
-                console.log(calculatorOutput);
+    <script src="j9.js">
 
-                document.querySelector('.show-the-number').innerHTML=`Calculator Output: ${calculatorOutput}`;
-
-
-        }
-
+       
 
     </script>
     
